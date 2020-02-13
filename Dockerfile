@@ -1,10 +1,9 @@
-FROM python:alpine
+FROM python:3.8.1
 
 ARG CLI_VERSION=1.16.86
 
-RUN apk -uv add --no-cache groff jq less && \
-    pip install --no-cache-dir awscli==$CLI_VERSION
+RUN pip install awscli==$CLI_VERSION boto3 datetime argparse
 
 WORKDIR /aws
 
-CMD sh
+CMD bash

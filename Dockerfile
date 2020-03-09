@@ -6,4 +6,4 @@ RUN pip install awscli==$CLI_VERSION boto3 datetime argparse
 
 WORKDIR /aws
 
-CMD bash
+CMD ["tail","-f","/dev/null"]
